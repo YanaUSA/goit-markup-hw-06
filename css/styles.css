@@ -507,11 +507,11 @@ color: var(--accent-color);
   transition: opacity var(--transition-time) var(--cubic);
 }
 
-/* .backdrop.is-hidden {
+.backdrop.is-hidden {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-} */
+}
 
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.8);
@@ -643,7 +643,15 @@ color: var(--accent-color);
 
 .check-input {
   position: absolute;
-  appearance: none;  
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .check-input:focus + .check-box {
@@ -669,12 +677,6 @@ color: var(--accent-color);
   margin: 0 auto;
   padding: 10px 56px;
 }
-
-
-
-
-
-
 
 /* Portfolio-page */
 .filtr {
