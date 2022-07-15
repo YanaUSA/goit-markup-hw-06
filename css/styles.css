@@ -528,7 +528,7 @@ color: var(--accent-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 
   transform: translate(-50%, -50%) scale(1);
-  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 500ms var(--cubic);
 }
 
 .modal-btn-close {
@@ -594,12 +594,16 @@ color: var(--accent-color);
   transition: fill var(--transition-time) var(--cubic);  
 }
 
+.form-label:hover,
 .form-input:hover,
 .form-input:focus,
-.form-icon:hover,
-.form-icon:focus {
+.form-icon:hover {
   fill: var(--accent-color);
   border-color: var(--accent-color);
+}
+
+.form-input:focus + .form-icon {
+  fill: var(--accent-color);
 }
 
 .comment-field {
@@ -621,14 +625,37 @@ color: var(--accent-color);
   color: rgba(117, 117, 117, 0.5);
 }
 
-.check-box {
+.check {
+  position: relative;
   text-align: center;
   margin-bottom: 30px;
   line-height: 1.71;
 }
 
-.checkbox {
-  margin-left: 8px;
+.check-box {
+  position: absolute;
+  width: 16px;
+  height: 15px;
+  top: 4px;
+  left: 14px;
+  background-image: url(../images/icon-unchecked.svg); 
+}
+
+.check-input {
+  position: absolute;
+  appearance: none;  
+}
+
+.check-input:focus + .check-box {
+  background-image: url(../images/icon-unchecked-focused.svg);
+}
+
+.check-input:checked:focus + .check-box {
+  background-image: url(../images/icon-check.svg);
+}
+
+.agreement {
+  margin-left: 23px;
   color: var(--grey-text-color);
 }
 
@@ -642,9 +669,6 @@ color: var(--accent-color);
   margin: 0 auto;
   padding: 10px 56px;
 }
-
-
-
 
 
 
